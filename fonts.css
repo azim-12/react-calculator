@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    font-family: "Digital7";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: "Digital7";
+    src: url(./fonts/digital-7.ttf);
+    src: url(./fonts/digital-7\ \(italic\).ttf);
+    src: url(./fonts/digital-7\ \(mono\ italic\).ttf);
+    src: url(./fonts/digital-7\ \(mono\).ttf);
+    font-weight: 700;
+}
+
+code {
+    font-family: "Digital7";
+}
