@@ -43,6 +43,7 @@ p {
 .expression {
     /* margin-top: 20px; */
     overflow-x: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
     text-align: right;
     height: 35px;

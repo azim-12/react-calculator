@@ -60,11 +60,12 @@ function App() {
 
     else if (digit === '.' && answer.slice(-1) === '.') return;
 
-    else if (digit === '.' && (answer.slice(-1) === '' || symbols.includes(answer.slice(-1)))) setAnswer(answer.concat('0').concat(digit)); 
+    else if (digit === '.' && (answer.slice(-1) === '' || symbols.includes(answer.slice(-1)))) {
+      setAnswer(answer.concat('0').concat(digit)); 
+    } 
     
     else if (digit === '.' && answer.includes('.') ) {
       let data = symbols.find(ele => answer.includes(ele));
-      console.log(data)
       if(data){
         let x = answer.split(data)
         if(!(x.slice(-1)[0].includes('.'))){
@@ -115,9 +116,9 @@ function App() {
             setAnswer(x.join(''));
           }else{
             setonlyDigits([])
-            setFinalResult('')  
-            let x = eval(answer.split('').slice(0,answer.length).join(''))
-            setAnswer(x.toString().concat(digit).toString())
+            setFinalResult('')
+            let x = digit!== "." ?  eval(answer.split('').slice(0,answer.length).join('')) : answer;
+            setAnswer(x.toString().concat(digit))
           }
         }
         document.querySelector('.result').classList.remove('animTop');
@@ -206,29 +207,29 @@ function App() {
             <button id='÷' onClick={() => display('/')}>÷</button>
           </div>
           <div>
-            <button id='9' onClick={() => display(7)}>7</button>
-            <button id='8' onClick={() => display(8)}>8</button>
-            <button id='7' onClick={() => display(9)}>9</button>
+            <button id='9' onClick={() => display("7")}>7</button>
+            <button id='8' onClick={() => display("8")}>8</button>
+            <button id='7' onClick={() => display("9")}>9</button>
             <button id='x' onClick={() => display('*')}>x</button>
           </div>
 
           <div>
-            <button id='4' onClick={() => display(4)}>4</button>
-            <button id='5' onClick={() => display(5)}>5</button>
-            <button id='6' onClick={() => display(6)}>6</button>
+            <button id='4' onClick={() => display("4")}>4</button>
+            <button id='5' onClick={() => display("5")}>5</button>
+            <button id='6' onClick={() => display("6")}>6</button>
             <button id='-' onClick={() => display('-')}>-</button>
           </div>
 
           <div>
-            <button id='1' onClick={() => display(1)}>1</button>
-            <button id='2' onClick={() => display(2)}>2</button>
-            <button id='3' onClick={() => display(3)}>3</button>
+            <button id='1' onClick={() => display("1")}>1</button>
+            <button id='2' onClick={() => display("2")}>2</button>
+            <button id='3' onClick={() => display("3")}>3</button>
             <button id='+' onClick={() => display('+')}>+</button>
           </div>
 
           <div>
             <button id='.' onClick={() => display('.')}>.</button>
-            <button id='0' onClick={() => display(0)}>0</button>
+            <button id='0' onClick={() => display("0")}>0</button>
             <button id='=' onClick={() => dispTotal('=')} style={{ width: "110px" }}>=</button>
           </div>
 
